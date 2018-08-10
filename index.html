@@ -26,27 +26,10 @@
               <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><button id="get-games">My Scores</button></li>
-                <!-- <li><a href="#">All Scores</a></li> -->
               </ul>
             </li>
             </ul>
           <ul class="nav navbar-nav navbar-right">
-            <!-- <li>
-              <form id="sign-up">
-                <a href="#">
-                  <button class="glyphicon glyphicon-user">
-                  Sign Up</button>
-                </a>
-              </form>
-            </li>
-            <li>
-              <form id="sign-in">
-                <a href="#">
-                  <span class="glyphicon glyphicon-log-in">
-                  </span> Sign In
-                </a>
-              </form>
-            </li> -->
             <li id="sign-out">
               <a href="#">
                 <span class="glyphicon glyphicon-log-out">
@@ -54,15 +37,20 @@
               </a>
             </li>
             <li>
-              <form id="change-password">
-                <input name="passwords[old]" type="password" placeholder="old password">
-                <input name="passwords[new]" type="password" placeholder="new password">
-                <a href="#">
-                  <button type="submit" class="glyphicon glyphicon-wrench">
-                  </button> Change Password
-                </a>
-              </form>
-            </li>
+            <a data-toggle="dropdown" id="changePassword" class="nav-link dropdown-toggle">
+              <span class="glyphicon glyphicon-edit"></span>  Change Password</a>
+                <ul class="dropdown-menu form-wrapper container-fluid">
+                  <form id="change-password">
+                    <div class="form-group">
+                      <input class="form-control" name="password[old]" placeholder="Old Password" type="password">
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" name="password[new]" placeholder="New Password" type="password">
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" value="Change Password">
+                  </form>
+                </ul>
+              </li>
           </ul>
         </div>
       </nav>

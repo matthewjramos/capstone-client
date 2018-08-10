@@ -4,21 +4,21 @@ const store = require('./store.js')
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://wdi-capstone-api.herokuapp.com/sign-up',
+    url: 'http://localhost:4741/sign-up',
     data: data
   })
 }
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://wdi-capstone-api.herokuapp.com/sign-in',
+    url: 'http://localhost:4741/sign-in',
     data: data
   })
 }
 const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: 'https://wdi-capstone-api.herokuapp.com/change-password',
+    url: 'http://localhost:4741/change-password',
     data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -28,7 +28,7 @@ const changePassword = function (data) {
 const signOut = function () {
   return $.ajax({
     method: 'DELETE',
-    url: 'https://wdi-capstone-api.herokuapp.com/sign-out',
+    url: 'http://localhost:4741/sign-out',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -40,7 +40,7 @@ const signOut = function () {
 const createGameSubmit = function (data) {
   return $.ajax({
     method: 'POST',
-    url: 'https://wdi-capstone-api.herokuapp.com/games/',
+    url: 'http://localhost:4741/games/',
     headers: {
       Authorization: 'Token token=' + store.user.token,
       contentType: 'application/json'
@@ -51,7 +51,7 @@ const createGameSubmit = function (data) {
 const getGameSubmit = function () {
   return $.ajax({
     method: 'GET',
-    url: 'https://wdi-capstone-api.herokuapp.com/games/',
+    url: 'http://localhost:4741/games/',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
@@ -61,7 +61,7 @@ const getGameSubmit = function () {
 const findGameSubmit = function (data) {
   return $.ajax({
     method: 'GET',
-    url: 'https://wdi-capstone-api.herokuapp.com/games/' + data.game.id,
+    url: 'http://localhost:4741/games/' + data.game.id,
     headers: {
       contentType: 'application/json'
     },
@@ -79,7 +79,7 @@ const updateGameSubmit = function (data, gameId) {
   // console.log('gameId is ', gameId)
   return $.ajax({
     method: 'PATCH',
-    url: 'https://wdi-capstone-api.herokuapp.com/games/' + gameId,
+    url: 'http://localhost:4741/games/' + gameId,
     headers: {
       Authorization: 'Token token=' + store.user.token,
       contentType: 'application/json'
@@ -89,7 +89,7 @@ const updateGameSubmit = function (data, gameId) {
 }
 const deleteGameSubmit = (gameId) => {
   return $.ajax({
-    url: 'https://wdi-capstone-api.herokuapp.com/games/' + gameId,
+    url: 'http://localhost:4741/games/' + gameId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
