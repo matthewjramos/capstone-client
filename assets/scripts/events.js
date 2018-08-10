@@ -41,7 +41,7 @@ const updateGame = function (event) {
   // console.log('data.id is', data.id)
   const gameId = $(event.target).closest('ul').attr('data-id')
   // console.log('closest event target is ', ((event.target).closest('ul')))
-  // console.log('gameId is ', gameId)
+  console.log('gameId is ', gameId)
   api.updateGameSubmit(data, gameId)
     .then(ui.updateGameSuccess)
     .catch(ui.updateGameError)
