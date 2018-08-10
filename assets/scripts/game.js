@@ -1,6 +1,12 @@
 'use strict'
 
 // refer to the canvas element
+function newGame () {
+  $('myCanvas').stop()
+  // $('#myCanvas').clear()
+  draw()
+}
+
 const canvas = document.getElementById('myCanvas')
 const ctx = canvas.getContext('2d')
 let ballRadius = 10
@@ -44,7 +50,7 @@ function keyUp (e) {
 function drawBall () {
   ctx.beginPath()
   ctx.arc(x, y, ballRadius, 0, Math.PI * 2)
-  ctx.fillStyle = '#0095DD'
+  ctx.fillStyle = '#a151e1'
   ctx.fill()
   ctx.closePath()
 }
@@ -58,7 +64,7 @@ function drawSprite () {
 }
 function drawScore () {
   ctx.font = '16px Arial'
-  ctx.fillStyle = '#0095DD'
+  ctx.fillStyle = '#a151e1'
   ctx.fillText('Score: ' + frameCount / 100, 8, 30)
 }
 
@@ -80,9 +86,15 @@ function draw () {
   } if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
     dy = -dy
   } else if ((x > spriteX && x < spriteX + spriteWidth) && (y > spriteY && y < spriteY + spriteHeight)) {
-      $('#content').html('GAME OVER')
-      canvas.width = 0
-      // document.location.reload()
+    // $('#content').html('GAME OVER')
+    $('#display').html('Game over. You scored ' + (frameCount / 100) + '!')
+    ballRadius += 200000
+    $('#score').val((frameCount / 100))
+
+    // $('#display').html('Signed in successfully!')
+
+    // canvas.width = 0
+    // document.location.reload()
   }
 
   if (rightKey && spriteX < canvas.width - spriteWidth) {
@@ -100,10 +112,10 @@ function draw () {
   requestAnimationFrame(draw)
   frameCount++
   // console.log(frameCount)
-  ballRadius += .01
-  dx += .5
+  ballRadius += 0.1
+  // dx += 5
   // console.log(dx)
-  dy -= .1
+  // dy -= .1
   // canvas.width -= .0000000000001
   // console.log(dy)
   // dy += .05
@@ -114,5 +126,6 @@ function draw () {
 draw()
 
 module.exports = {
-  draw: draw
+  draw: draw,
+  newGame: newGame
 }

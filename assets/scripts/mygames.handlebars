@@ -1,0 +1,30 @@
+{{#each games as |game|}}
+  <div class="col-sm-3 game-box">
+    <h2 data-id="{{game_id}}" class="my-game">Score:{{game.score}}</h2>
+
+    <!-- <ul data-id="{{game._id}}"> -->
+
+      <!-- <li> -->
+        <h3>{{#if game._id}}
+        Description:{{game.description}}
+        {{else}}
+        No description found.
+      {{/if}}
+        </h3>
+      <!-- </li> -->
+
+    <!-- </ul> -->
+        <form class="update-game">
+          <input name="game[score]" type="integer" placeholder="{{game.score}}">
+          <input name="game[description]" type="text" placeholder="description">
+          <br>
+          <button type="submit" class="btn btn-primary">Update Game</button>
+        </form>
+
+        <button  class="delete-game btn btn-danger">Delete Game</button>
+
+
+
+    </div>
+
+    {{/each}}
