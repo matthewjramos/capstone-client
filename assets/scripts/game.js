@@ -20,7 +20,7 @@ const spriteHeight = 30
 const spriteWidth = 30
 let spriteX = (canvas.width - spriteWidth) / 2
 let spriteY = (canvas.height - spriteHeight) / 2
-console.log(canvas.height)
+// console.log(canvas.height)
 
 let rightKey = false
 let leftKey = false

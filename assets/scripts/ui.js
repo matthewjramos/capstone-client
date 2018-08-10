@@ -4,7 +4,7 @@ const handlebars = require('./mygames.handlebars')
 
 // Auth starts
 const signInSuccess = function (response) {
-  console.log(response)
+  // console.log(response)
   store.user = response.user
   $('#display').html('Signed in successfully!')
   $('#create-game').show()
@@ -59,8 +59,8 @@ const getGameSuccess = function (data) {
   const showGamesHtml = handlebars({ games: data.games })
   $('#content').html('')
   $('#content').append(showGamesHtml)
-  console.log(showGamesHtml)
-  console.log(data.games)
+  // console.log(showGamesHtml)
+  // console.log(data.games)
 }
 const getGameError = function (error) {
   $('#display').html('Game retrieval unsuccessful', error)
