@@ -1,6 +1,6 @@
 const store = require('./store.js')
 const handlebars = require('./mygames.handlebars')
-// const handlebarsSongs = require('./songs.handlebars')
+const game = require('./game.js')
 
 // Auth starts
 const signInSuccess = function (response) {
@@ -14,6 +14,7 @@ const signInSuccess = function (response) {
   // $('#sign-up').hide()
   // $('#sign-in').hide()
   $('#signInModal').modal('hide')
+  game.draw()
 }
 const signInError = function (error) {
   $('#display').html('Sign in unsuccessful, please try again!', (error))
