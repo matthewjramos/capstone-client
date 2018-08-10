@@ -76,10 +76,10 @@ const findGameSubmit = function (data) {
 }
 const updateGameSubmit = function (data, gameId) {
   // console.log('data is', data)
-  // console.log('gameId is ', gameId)
+  console.log('gameId is ', gameId)
   return $.ajax({
     method: 'PATCH',
-    url: 'https://wdi-capstone-api.herokuapp.com/games/' + gameId,
+    url: 'https://wdi-capstone-api.herokuapp.com/games/' + data.game.id,
     headers: {
       Authorization: 'Token token=' + store.user.token,
       contentType: 'application/json'
