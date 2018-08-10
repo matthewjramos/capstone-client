@@ -7,3 +7,16 @@ canvas {
   display: block;
   margin: 0 auto;
 }
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal-background;
+  background-color: black;
+  // Fade for backdrop
+  &.fade { @include opacity(1); }
+  &.in { @include opacity(1); }
+}
