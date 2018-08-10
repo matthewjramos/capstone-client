@@ -2,7 +2,7 @@
   <div class="col-sm-3 game-box">
     <h2 data-id="{{game_id}}" class="my-game">Score:{{game.score}}</h2>
 
-    <!-- <ul data-id="{{game._id}}"> -->
+    <ul data-id="{{game._id}}">
 
       <!-- <li> -->
         <h3>{{#if game._id}}
@@ -13,7 +13,7 @@
         </h3>
       <!-- </li> -->
 
-    <!-- </ul> -->
+    </ul>
         <form class="update-game">
           <input name="game[score]" type="integer" placeholder="{{game.score}}">
           <input name="game[description]" type="text" placeholder="description">
