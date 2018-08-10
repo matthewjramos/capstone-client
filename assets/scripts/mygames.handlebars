@@ -4,23 +4,25 @@
 
     <ul data-id="{{game._id}}">
 
-      <!-- <li> -->
+      <li>
         <h3>{{#if game._id}}
         Description:{{game.description}}
         {{else}}
         No description found.
       {{/if}}
         </h3>
-      <!-- </li> -->
-
+      </li>
+      <li>
         <form class="update-game">
           <input name="game[score]" type="integer" placeholder="{{game.score}}">
           <input name="game[description]" type="text" placeholder="description">
           <br>
           <button type="submit" class="btn btn-primary">Update Game</button>
         </form>
-
+      </li>
+      <li>
         <button  class="delete-game btn btn-danger">Delete Game</button>
+      </li>
       </ul>
 
 
