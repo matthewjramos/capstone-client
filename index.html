@@ -18,7 +18,7 @@
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Capstone Game</a>
+            <a class="navbar-brand" href="#">You Can Cheat If You Want</a>
           </div>
           <ul class="nav navbar-nav">
             <li class="dropdown">
@@ -60,9 +60,7 @@
       <canvas id="myCanvas" width="600" height="400"></canvas>
 
       <br>
-      <div id="content"> </div>
-
-      <div id="restart-and-save-games">
+      <div id="restart-and-save-games" class="col-sm-12 game-box">
         <!-- <button class="btn btn-success" id="start-game">Start Game</button> -->
         <form id="create-game">
           <input id="score" name="game[score]" type="number" step="any" placeholder=score>
@@ -70,6 +68,10 @@
           <button type="submit" class="btn btn-success">Save Game!</button>
         </form>
       </div>
+
+      <br>
+      <div id="content"> </div>
+
 
       <div id="signInModal" class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
