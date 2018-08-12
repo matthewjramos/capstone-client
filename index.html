@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Capstone</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+    </head>
+
+    <body>
+
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">You Can Cheat If You Want</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">View Games
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><button id="get-games">All Games</button></li>
+              </ul>
+            </li>
+            </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li id="sign-out">
+              <a href="#">
+                <span class="glyphicon glyphicon-log-out">
+                </span> Sign Out
+              </a>
+            </li>
+            <li>
+            <a data-toggle="dropdown" id="changePassword" class="nav-link dropdown-toggle">
+              <span class="glyphicon glyphicon-edit"></span>  Change Password</a>
+                <ul class="dropdown-menu form-wrapper container-fluid">
+                  <form id="change-password">
+                    <div class="form-group">
+                      <input name="passwords[old]" type="password" placeholder="Old Password">
+                    </div>
+                    <div class="form-group">
+                      <input name="passwords[new]" type="password" placeholder="New Password">
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-block" value="Change Password">
+                  </form>
+                </ul>
+              </li>
+          </ul>
+        </div>
+      </nav>
+
+      <h1 id="display"> Good Luck! </h1>
+
+      <canvas id="myCanvas" width="600" height="400"></canvas>
+
+      <br>
+      <div id="restart-and-save-games" class="col-sm-12 game-box">
+
+
+        <button class="btn btn-success" id="start-game">Start Game</button>
+
+
+        <form id="create-game">
+          <input id="score" name="game[score]" type="number" step="any" placeholder=score>
+          <input name="game[description]" type="text" placeholder="description">
+          <button type="submit" class="btn btn-success">Save Game!</button>
+        </form>
+      </div>
+
+      <br>
+      <div id="content"> </div>
+
+
+      <div id="signInModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">Please Sign Up Or Sign In To Play</h2>
+
+            </div>
+            <div class="modal-body">
+
+            <form  id="sign-up">
+
+              <div>
+                <label for="inputEmail1">Email Address</label>
+                <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+              </div>
+              <div>
+                <label for="inputPassword1">Password</label>
+                <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+              </div>
+              <div>
+                <label for="inputPasswordConfirm">Confirm Password</label>
+                <input name="credentials[password_confirmation]" type="password" class="form-control" placeholder="Password">
+              </div>
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+
+            </form>
+
+            <h5 id="modal-display"> or </h5>
+            <h4> Sign In </h4>
+
+            <form id="sign-in">
+
+              <div>
+                <label for="inputEmail1">Email address</label>
+                <input name="credentials[email]" type="email" class="form-control" placeholder="Enter email">
+              </div>
+
+              <div>
+                <label for="inputPassword1">Password</label>
+                <input name="credentials[password]" type="password" class="form-control" placeholder="Password">
+              </div>
+
+              <button type="submit" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Sign In</button>
+
+            </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </body>
+</html>
