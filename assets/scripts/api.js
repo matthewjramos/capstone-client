@@ -16,6 +16,7 @@ const signIn = function (data) {
   })
 }
 const changePassword = function (data) {
+  // console.log('data is', data)
   return $.ajax({
     method: 'PATCH',
     url: 'https://wdi-capstone-api.herokuapp.com/change-password',
