@@ -1,11 +1,6 @@
 'use strict'
 
 // refer to the canvas element
-function newGame () {
-  $('myCanvas').stop()
-  // $('#myCanvas').clear()
-  draw()
-}
 
 const canvas = document.getElementById('myCanvas')
 const ctx = canvas.getContext('2d')
@@ -14,8 +9,8 @@ let x = canvas.width / 2
 let y = canvas.height - 30
 let dx = 2
 let dy = -2
-const wolf = new Image()
-wolf.src = './assets/wolf.png'
+// const wolf = new Image()
+// wolf.src = './assets/wolf.png'
 const spriteHeight = 30
 const spriteWidth = 30
 let spriteX = (canvas.width - spriteWidth) / 2
@@ -121,6 +116,26 @@ function draw () {
   // dy += .05
   // spriteX += .05
   // spriteY += .05
+}
+
+function newGame () {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  frameCount = 0
+  ballRadius = 10
+  x = canvas.width / 2
+  y = canvas.height - 30
+  dx = 2
+  dy = -2
+
+  spriteX = (canvas.width - spriteWidth) / 2
+  spriteY = (canvas.height - spriteHeight) / 2
+
+  rightKey = false
+  leftKey = false
+  upKey = false
+  downKey = false
+
+  draw()
 }
 
 draw()

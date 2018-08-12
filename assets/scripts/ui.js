@@ -17,13 +17,13 @@ const signInSuccess = function (response) {
   game.draw()
 }
 const signInError = function (error) {
-  $('#display').html('Sign in unsuccessful, please try again!', (error))
+  $('#modal-display').html('Sign in unsuccessful, please try again!', (error))
 }
 const signUpSuccess = function (response) {
-  $('#display').html('Signed up successfully!')
+  $('#modal-display').html('Signed up successfully!')
 }
 const signUpError = function (error) {
-  $('#display').html('Sign up unsuccessful, please try again.', (error))
+  $('#modal-display').html('Sign up unsuccessful, please try again.', (error))
 }
 const changePasswordSuccess = function (changePasswordResponse) {
   $('#display').html('Password changed successfully!')
@@ -42,7 +42,9 @@ const signOutSuccess = function (signOutResponse) {
   // $('#sign-up').show()
   // $('#sign-in').show()
   $('#signInModal').modal()
+  $('#content').html('')
 }
+
 const signOutError = function (error) {
   $('#display').html('Failed to sign out.', error)
 }

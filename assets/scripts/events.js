@@ -2,7 +2,7 @@
 const getFormFields = require('../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-// const game = require('./game.js')
+const game = require('./game.js')
 
 // const handlebars = require('./mygames.handlebars')
 
@@ -64,6 +64,7 @@ const signInSubmit = function (event) {
     .then(ui.signInSuccess)
     .catch(ui.signInError)
   $(event.target).trigger('reset')
+  game.newGame()
 }
 const signUpSubmit = function (event) {
   event.preventDefault()
